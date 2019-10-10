@@ -38,6 +38,6 @@ export class LoginComponent implements OnInit {
     }
 
 
-    this.authService.login(this.formControls.name.value, this.formControls.password.value)
+    this.authService.login(this.formControls.name.value, this.formControls.password.value);
   }
 }

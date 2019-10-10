@@ -11,9 +11,8 @@ export class AuthService {
   constructor() { }
 
   public login(email, password) {
-    this.currentUser.login = email;
-    this.currentUser.password = password;
-    localStorage.setItem('ACCESS_TOKEN', 'access_token');
+    this.currentUser.email = email;
+    this.currentUser.password = password
   }
 
   public isLoggedIn() {

@@ -8,7 +8,7 @@
         <input class="form-control" id="email" type="text" placeholder="Email" formControlName="email"
                [ngClass]="{ 'has-error': formControls.email.errors && (formControls.email.errors.touched || formControls.email.errors.dirty) }">
 
-        <div *ngIf="formControls.email.errors && (formControls.email.errors.touched || formControls.email.errors.dirty)" class="help-block">
+        <div *ngIf="formControls.email.errors && (formControls.email.errors.touched || formControls.email.errors.dirty)" class="alert alert-danger">
           <div *ngIf="formControls.email.errors.required">Email is required</div>
         </div>
       </div>
@@ -18,7 +18,7 @@
         <input class="form-control" id="password" type="password" placeholder="Password" formControlName="password"
                [ngClass]="{ 'has-error': formControls.password.errors && (formControls.password.errors.touched || formControls.password.errors.dirty)}">
 
-        <div *ngIf="formControls.password.errors && (formControls.password.errors.touched || formControls.password.dirty)" class="help-block">
+        <div *ngIf="formControls.password.errors && (formControls.password.errors.touched || formControls.password.dirty)" class="alert alert-danger">
           <div *ngIf="formControls.password.errors.required">Password is required</div>
         </div>
       </div>
