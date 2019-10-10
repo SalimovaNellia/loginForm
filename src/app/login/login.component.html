@@ -1,0 +1,29 @@
+<div class="container">
+  <p>Login</p>
+  <div class="login">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="email"></label>
+        <input class="form-control" id="email" type="text" placeholder="Email" formControlName="email"
+               [ngClass]="{ 'has-error': formControls.email.errors && (formControls.email.errors.touched || formControls.email.errors.dirty) }">
+
+        <div *ngIf="formControls.email.errors && (formControls.email.errors.touched || formControls.email.errors.dirty)" class="help-block">
+          <div *ngIf="formControls.email.errors.required">Email is required</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password"></label>
+        <input class="form-control" id="password" type="password" placeholder="Password" formControlName="password"
+               [ngClass]="{ 'has-error': formControls.password.errors && (formControls.password.errors.touched || formControls.password.errors.dirty)}">
+
+        <div *ngIf="formControls.password.errors && (formControls.password.errors.touched || formControls.password.dirty)" class="help-block">
+          <div *ngIf="formControls.password.errors.required">Password is required</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">LogIn</button>
+    </form>
+  </div>
+</div>
