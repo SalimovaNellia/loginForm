@@ -12,7 +12,7 @@ export class AuthService {
 
   public login(email, password) {
     this.currentUser.email = email;
-    this.currentUser.password = password
+    this.currentUser.password = password;
   }
 
   public isLoggedIn() {

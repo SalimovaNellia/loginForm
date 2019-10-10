@@ -29,15 +29,14 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls; //to make easy to access the form controls on the HTML form
   }
 
-
   onSubmit() {
     this.isSubmitted = true;
 
-    if (this.loginForm.invalid) {
+    if (this.loginForm.dirty && this.loginForm.valid) {
+      this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
+      console.log(`Email is: ${this.loginForm.value.email}`);
+    } else {
       return;
     }
-
-
-    this.authService.login(this.formControls.name.value, this.formControls.password.value);
   }
 }
